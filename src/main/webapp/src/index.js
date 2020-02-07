@@ -1,4 +1,4 @@
-const url = "ws://localhost:8080/com.mycompany_Rchatt/chatserver";
+const url = "ws://"+ location.host +"/com.mycompany_Rchatt/chatserver";
 const ws = new WebSocket(url);
 const cellElements = [...document.querySelectorAll('[data-cell')];
 const board = document.getElementById('board');
