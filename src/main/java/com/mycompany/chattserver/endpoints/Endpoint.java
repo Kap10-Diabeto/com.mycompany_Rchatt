@@ -33,7 +33,7 @@ import javax.websocket.server.ServerEndpoint;
             currentUser.getBasicRemote()
             .sendText(buildJsonUsers());
             currentUser.getBasicRemote()
-            .sendText(buildMessage("system", username + "has left the chatroom!"));
+            .sendText(buildMessage("System", username + "has left the game"));
         }
         
             iterator.next().getBasicRemote()
@@ -48,7 +48,7 @@ import javax.websocket.server.ServerEndpoint;
         if (username == null) {
             user.getUserProperties().put("username", message);
             user.getBasicRemote()
-            .sendText(buildMessage("system", "Welcome to the chatroom!"));
+            .sendText(buildMessage("System", "Welcome to TicTacToe!"));
 
             Iterator<Session> iterator = sessions.iterator();
             while (iterator.hasNext()) {

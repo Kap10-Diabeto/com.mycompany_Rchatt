@@ -1,6 +1,13 @@
+@font-face {
+    font-family: karla;
+    src: url(../misc/Karla/Karla-Regular.ttf);
+  }
+
+
 *, *::after, *::before{
 
     box-sizing: border-box;
+    font-family: karla;
 }
 
 :root{
@@ -11,23 +18,27 @@
 
 body{
     margin: 0;
+    background-color: #23272A;
 }
 
 .board{
-    width: 100vw;
-    height: 100vh;
+    float: right;
+    margin-right: 200px;
+    height: 420px;
     display: grid;
-    justify-content: center;
-    align-content: center;
-    justify-items: center;
-    align-items: center;
+     justify-content: center; 
+    align-content: center; 
+     justify-items: center; 
+    align-items: center;  
     grid-template-columns: repeat(3, auto);
+    margin-top: 300px;
+    
 }
 
 .cell{
 width: var(--cell-size);
 height:  var(--cell-size);
-border: solid thistle 2px;
+border: solid white  2px;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -63,14 +74,16 @@ cursor: pointer;
 .cell.x::before,
 .cell.x::after,
 .cell.o::before{
-    background-color: black;
+    background-color: white;
+    box-shadow: 0 0 20px rgb(255, 255, 255);;
 }
 
 
 .board.x .cell:not(.x):not(.o):hover::before,
 .board.x .cell:not(.x):not(.o):hover::after,
 .board.o .cell:not(.x):not(.o):hover::before{
-    background-color: lightgray;
+    background-color: #2C2F33;
+    
 }
 
 .cell.x::before, 
@@ -114,7 +127,11 @@ cursor: pointer;
 .board.o .cell:not(.x):not(.o):hover::after{
     width: calc(var(--mark-size)*.7);
     height: calc(var(--mark-size)*.7);
-    background-color: white;
+    background-color: #23272A;
+    -webkit-box-shadow: inset 0px 0px 50px -16px rgba(255,252,255,1);
+    -moz-box-shadow: inset 0px 0px 50px -16px rgba(255,252,255,1); 
+    box-shadow: inset 0px 0px 50px -16px rgba(255,252,255,1);
+    
 }
 
 .winning-message{
@@ -150,59 +167,47 @@ cursor: pointer;
     display: flex;
 }
 
-
-
-
-
-
-
-
-/* .ULwrap{
-    display: grid;
-    grid-template-columns: 200px 200px 200px;
-    grid-template-rows: 200px 200px 200px;
-    justify-content: center;
-    margin-top: 100px;
-    margin-bottom: 200px;
-}
-
-li{
-    list-style: none;
-    height: 200px;
-    width: 200px;
-    margin: 0;
-
+textarea{
+    resize: none;
+    height: 300px;
+    width: 700px;
     padding: 0;
+    background-color: #2C2F33;
+    color: #ffff;
+    border: solid #fff 1px;
+    outline: none;
+    padding: 15px;
 }
 
-ul button{
-    height: 200px;
-    width: 200px;
-    background-color: transparent;
-    border: none;
-    padding: 0;
-}
-
-li:nth-of-type(1), 
-li:nth-of-type(2), 
-li:nth-of-type(4), 
-li:nth-of-type(5), 
-li:nth-of-type(7),
-li:nth-of-type(8){
-
-    border-right: solid black 2px;
+#messageText{
+    width: 647px;
+    height: 37px;
+    background-color: #2C2F33;
+    border: solid #ffffff 1px;
+    color: white;
+    outline: none;
+    padding-left: 15px;
 
 }
 
-li:nth-of-type(1),
-li:nth-of-type(2), 
-li:nth-of-type(3), 
-li:nth-of-type(4), 
-li:nth-of-type(5), 
-li:nth-of-type(6){
-    
-    border-bottom: solid black 2px;
-    
+#button{
+    padding:10px;
+    outline: none;
+    border: solid #ffffff 1px;
+    background-color: #2C2F33;
+    color: #ffff;
+    transition: .5s;
 }
- */
 
+#button:hover{
+    text-shadow:  0 0 20px rgb(255, 255, 255);;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.stylebox{
+    margin-top: 350px;
+    width: 700px;
+    float: left;
+    margin-left: 200px;
+}
